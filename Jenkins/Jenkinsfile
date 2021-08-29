@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Source') {
+            steps {
+                echo 'Source step..'
+		sh 'git clone https://github.com/sherifkunch/NV_demo.git'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
