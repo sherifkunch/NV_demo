@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Building..'
 		echo "Start building"
-		docker build -t "nv-project-ecr-repository:$GIT_COMMIT" ~/workspace/NV-project-jenkins-pipeline/Application
+		docker build -t "nv-project-ecr-repository:$GIT_COMMIT" . 
 		echo "Build successfully"
 		echo "push to ECR repository"
 		aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 855051130134.dkr.ecr.eu-central-1.amazonaws.com			
