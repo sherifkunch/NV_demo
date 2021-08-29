@@ -13,4 +13,4 @@ COPY . .
 RUN pip3 install boto3
 RUN pip3 install psycopg2-binary
 
-CMD [ "python3", "./script.py" ] 
+CMD [ "python3", "./Application/script.py" ] 
