@@ -35,3 +35,7 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 sudo apt-get install unzip
 unzip awscliv2.zip
 sudo ./aws/install
+
+
+echo "Installing python on ubuntu"
+sudo apt install python3-pip
