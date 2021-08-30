@@ -6,12 +6,9 @@ import boto3
 
 s3 = boto3.client('s3')
 
- filename = ['Application/index.html','Application/error.html']
- bucket_name = 's3-website-nv.com'
+filename = ['Application/index.html','Application/error.html']
+bucket_name = 's3-website-nv.com'
 
- for file in filename:
-         data = open(file)
-         s3.put_object(  Body=data,
-                         Bucket='s3-website-nv.com',
-                         Key=file,
-                         ContentType='text/html' )
+for file in filename:
+    data = open(file)   
+    s3.put_object(Body=data,Bucket='s3-website-nv.com',Key=file,ContentType='text/html')
