@@ -6,7 +6,7 @@ import json
 
 os.environ['AWS_DEFAULT_REGION'] = 'eu-central-1'
 
-client_ssm = boto3.client('ssm',aws_access_key_id='AKIA4OFIE2ULC4DTTEMQ',aws_secret_access_key='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')
+client_ssm = boto3.client('ssm',aws_access_key_id='AKIA4OFIE2ULC4DQ',aws_secret_access_key='7da9KgU4KF3UcK4xqbiOxuiemK')
 
 username_response = client_ssm.get_parameter(
     Name='/rds/db/nv-project-rds/superuser/username'
@@ -24,9 +24,9 @@ USR=username_response['Parameter']['Value']
 PWD=password_response['Parameter']['Value']
 ID=identifier_response['Parameter']['Value']
 
-session = boto3.Session(aws_access_key_id='AKIA4OFIE2ULC4DTTEMQ',aws_secret_access_key='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')
+session = boto3.Session(aws_access_key_id='AKIA4OFIE2ULCQ',aws_secret_access_key='eT7dldFGWwgL7a9KgU4KF3UcK4xqbiOxuiemK')
     
-client_rds = session.client('rds',aws_access_key_id='AKIA4OFIE2ULC4DTTEMQ',aws_secret_access_key='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')
+client_rds = session.client('rds',aws_access_key_id='AKIA4OFIE2UEMQ',aws_secret_access_key='eT70dldFGWwgL7a9KgU4KF3UcK4xqbiOxuiemK')
 
 instance_describtion = client_rds.describe_db_instances(DBInstanceIdentifier=ID)
 
