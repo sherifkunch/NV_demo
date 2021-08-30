@@ -1,5 +1,5 @@
 ## Explanation
-The project is aggregation of many different interconnected technologies, used to build NV_project.
+The project is aggregation of many different interconnected technologies.
 
 A number of AWS resources had been provisioned using terraform infrastructure as a code.
 
