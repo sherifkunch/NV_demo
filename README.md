@@ -3,9 +3,9 @@ The project is aggregation of many different interconnected technologies.
 
 A number of AWS resources had been provisioned using terraform infrastructure as a code.
 
-There is user data script (installation.sh), which installs all the needed packages and softwares for the newly created ec2 instance. 
+installation.sh, installs all the needed packages and softwares for the newly created ec2 instance. 
 
-Jenkins automation tool is using pipeline as a code - Jenkinsfile. 
+Jenkinsfile is being use as it follows the best practices of IaC. 
 
 There is a python application using Boto3 which interconnect with the database. 
 
@@ -16,7 +16,7 @@ After succefull connection to the database, the following output will appear.
 The static HTML website is accessible on the following link:
 http://s3-website-nv.com.s3-website.eu-central-1.amazonaws.com
 
-Application/upload_html.py script uploads the html files to the S3 bucket. 
+Application/upload_html.py python script uploads the html files to the S3 bucket using Boto3 library. 
 
 
 ## Additional details
