@@ -37,8 +37,6 @@ pipeline {
             steps {
                 echo 'Deploying....'
 		echo "Uploading script"
-		sh 'apt install python3-pip' 
-		sh 'pip3 install boto3'
 		sh 'python3 Application/upload_html.py'
             }
         }
