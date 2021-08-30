@@ -20,7 +20,8 @@ Application/upload_html.py python script uploads the html files to the S3 bucket
 
 
 ## Additional details
-In order to upload static html in s3, ExtraArgs={'ContentType':'text/html'} need to be added, otherwise the link for accessing the static website will download the index.html file, not open it in the browser.
+In order to upload static html in s3, the following "ExtraArgs={'ContentType':'text/html'}" need to be aded.
+Otherwise the link for accessing the static website will not open the index.html file in the browser, but it will start downloading it.
 
 
 
