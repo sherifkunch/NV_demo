@@ -1,3 +1,12 @@
+## Explanation
+A number of resources had been provisioned using terraform infrastructure as a code. 
+
+<img width="921" alt="Screenshot 2021-08-30 at 18 28 44" src="https://user-images.githubusercontent.com/33749254/131364188-27ee53f1-661f-4e70-8659-047a58964cf5.png">
+
+
+In order to upload static html in s3, ExtraArgs={'ContentType':'text/html'} need to be added, otherwise the link for accessing the static website will download the index.html file, not open it in the browser.
+
+
 ## Jenkins CI
 
 - echo "Start building"
