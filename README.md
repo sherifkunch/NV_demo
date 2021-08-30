@@ -1,5 +1,13 @@
 ## Explanation
-A number of resources had been provisioned using terraform infrastructure as a code.
+The project is aggregation of many different interconnected technologies, used to build NV_project.
+
+A number of AWS resources had been provisioned using terraform infrastructure as a code.
+
+There is user data script (installation.sh), which installs all the needed packages and softwares for the newly created ec2 instance. 
+
+Jenkins automation tool is using pipeline as a code - Jenkinsfile. 
+
+There is a python application using Boto3 which interconnect with the database. 
 
 After succefull connection to the database, the following output will appear.
 
@@ -8,25 +16,12 @@ After succefull connection to the database, the following output will appear.
 The static HTML website is accessible on the following link:
 http://s3-website-nv.com.s3-website.eu-central-1.amazonaws.com
 
+Application/upload_html.py script uploads the html files to the S3 bucket. 
+
+
 ## Additional details
 In order to upload static html in s3, ExtraArgs={'ContentType':'text/html'} need to be added, otherwise the link for accessing the static website will download the index.html file, not open it in the browser.
 
-
-## Jenkins CI
-
-- echo "Start building"
-- docker build -t "nv-project-ecr-repository:$GIT_COMMIT" .
-- echo "Build successfully"
-- echo "push to ECR repository"
-- aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 855051130134.dkr.ecr.eu-central-1.amazonaws.com
-- echo "Tagging"
-- docker tag nv-project-ecr-repository:$GIT_COMMIT 855051130134.dkr.ecr.eu-central-1.amazonaws.com/nv-project-ecr-repository:latest
-- echo "Docker push"
-- docker push 855051130134.dkr.ecr.eu-central-1.amazonaws.com/nv-project-ecr-repository:latest
-- echo "Code was uploaded successfully"
-- echo "Uploading script"
-- pip3 install boto3 
-- python3 upload_html.py
 
 
 
