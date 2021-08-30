@@ -7,6 +7,8 @@ pipeline {
     stages {
         stage('Source') {
             steps {
+		echo "Cleaning workspace"
+		sh 'rm -rf workspaces/*'
                 echo 'Source step..'
 		echo "Clonning my git repository"
 		sh 'git clone https://github.com/sherifkunch/NV_demo.git'

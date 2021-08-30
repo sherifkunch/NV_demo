@@ -27,4 +27,11 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt-get update
 sudo apt-get install docker-ce --yes
 sudo usermod -aG docker ubuntu
+sudo usermod -aG docker jenkins
 sudo systemctl start docker
+
+echo "Installing aws cli"
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+sudo apt-get install unzip
+unzip awscliv2.zip
+sudo ./aws/install
