@@ -6,7 +6,7 @@ import boto3
 
 s3 = boto3.client('s3')
 
- filename = ['index.html','error.html']
+ filename = ['Application/index.html','Application/error.html']
  bucket_name = 's3-website-nv.com'
 
  for file in filename:
