@@ -33,7 +33,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'i
+                echo 'Deploying....'
 		echo "Uploading script"
 		sh 'pip3 install boto3'
 		sh 'python3 Application/upload_html.py'
